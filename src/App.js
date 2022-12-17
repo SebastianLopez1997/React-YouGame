@@ -1,8 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./components/Navbar/Navbar";
-import Navbar from "./components/Navbar/Navbar";
-import Carousel from "./components/Carousel/Carousel";
 import Cards from "./components/Cards/Cards";
 import Main from "./components/Mian/Main";
 

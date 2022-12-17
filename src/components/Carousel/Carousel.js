@@ -12,7 +12,7 @@ const Carousel = () => {
           <img src="https://i.pinimg.com/originals/48/33/a0/4833a01a75f1cb302c12f84c62da0475.png" className="d-block w-100" alt="Juego god of war" />
         </div>
         <div className="carousel-item">
-          <img src="https://images6.alphacoders.com/102/1023546.jpg" className="d-block w-100" alt="Juego hallo infinity" />
+          <img src="https://images6.alphacoders.com/102/1023546.jpg" className="d-block w-100" alt="Juego hallo infinite" />
         </div>
         <div className="carousel-item">
           <img src="https://wallpapercave.com/wp/wp8737802.png" className="d-block w-100" alt="Juego resident evil village" />

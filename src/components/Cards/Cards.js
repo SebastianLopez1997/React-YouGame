@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "../Counter/Counter";
 import Button from "../UI/Button";
 
 const Cards = (props) => {
@@ -6,7 +7,7 @@ const Cards = (props) => {
     props;
 
   return (
-    <div className="card" style={{ width: "18rem", backgroundColor: "orange" }}>
+    <div className="card" style={{margin:"5vh", width: "18rem", backgroundColor: "orange" }}>
       <img src={img} className="card-img-top" alt="..." />
       <div className="card-body">
         <h2 className="card-title">{titulo}</h2>
@@ -14,6 +15,7 @@ const Cards = (props) => {
         <h5 className="card-text">Genero: {genero}</h5>
         <h6 className="card-text">Precio: {precio}</h6>
         <Button btnText={btnText} btnClassName={btnClassName} />
+        <Counter/>
       </div>
     </div>
   );
