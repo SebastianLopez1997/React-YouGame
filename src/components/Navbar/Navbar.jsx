@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./Navbar.css"
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar fondo_navbar navbar-expand-lg ">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           YouGame
@@ -56,7 +56,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Todos
+                    Todos 
                   </a>
                 </li>
               </ul>
