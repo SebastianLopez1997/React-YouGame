@@ -1,0 +1,32 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "titulo": "God of war",
+      "description": "juego del año",
+      "genero": "aventura",
+      "img": "https://i.pinimg.com/originals/48/33/a0/4833a01a75f1cb302c12f84c62da0475.png",
+      "precio": 6000,
+      "btnText": "Comprar"
+    },
+    {
+      "id": 2,
+      "titulo": "Resident evil",
+      "description": "juego de aventura",
+      "genero": "terror",
+      "img": "https://wallpapercave.com/wp/wp8737802.png",
+      "precio": 5000,
+      "btnText": "Comprar"
+    },
+    {
+      "id": 3,
+      "titulo": "Halo infinite",
+      "description": "Juego de disparos",
+      "genero": "accion",
+      "img": "https://images6.alphacoders.com/102/1023546.jpg",
+      "precio": 5600,
+      "btnText": "Agotado",
+      "btnClassName": "btn btn-danger"
+    }
+  ]
+}

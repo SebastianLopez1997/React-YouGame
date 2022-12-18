@@ -1,43 +1,58 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "./components/Navbar/Navbar";
 import Cards from "./components/Cards/Cards";
 import Main from "./components/Mian/Main";
+import config from "./config.json";
+import { useState, useEffect } from "react";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
-  const cards = [
-    {
-      titulo: "God of war",
-      description: "juego del año",
-      genero: "aventura",
-      img: "https://i.pinimg.com/originals/48/33/a0/4833a01a75f1cb302c12f84c62da0475.png",
-      precio: 6000,
-      btnText: "Comprar",
-    },
-    {
-      titulo: "Resident evil",
-      description: "juego de aventura",
-      genero: "terror",
-      img: "https://wallpapercave.com/wp/wp8737802.png",
-      precio: 5000,
-      btnText: "Comprar",
-    },
-    {
-      titulo: "Halo infinite",
-      description: "Juego de disparos",
-      genero: "accion",
-      img: "https://images6.alphacoders.com/102/1023546.jpg",
-      precio: 5600,
-      btnText: "Agotado",
-      btnClassName: "btn btn-danger",
-    },
-  ];
+  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getCards = () => {
+    setLoading(true);
+    const operacion = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          status: 200,
+          data: config.cards,
+        });
+      }, 1500);
+    });
+
+    operacion
+      .then(
+        (resultado) => {
+          console.clear();
+          setCards(resultado.data);
+        },
+        (err) => {
+          console.log(err + "Error");
+        }
+      )
+      .catch((err) => {
+        console.log(err);
+        alert("Algo fallo");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    getCards();
+    return () => {
+      setCards([]);
+    };
+  }, []);
+
   return (
     <div className="App" style={{ backgroundColor: "rgb(249, 141, 0)" }}>
       <Main>
-        <div>
-          <div className="d-flex">
-            {cards.map(
+        {loading && <Spinner />}
+        <div className="d-flex">
+          {!loading && cards.length > 0 ? cards.map(
               (
                 {
                   titulo,
@@ -61,8 +76,7 @@ function App() {
                   btnClassName={btnClassName}
                 />
               )
-            )}
-          </div>
+            ) : !loading && cards.length < 1 && <h1>Ups fallo la carga</h1>} 
         </div>
       </Main>
     </div>

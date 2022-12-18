@@ -9,7 +9,7 @@ const {children} = props
       <Navbar />
       <Carousel />
       {children}
-      <h2>Aqui va ek footer mas adelante</h2>
+      <h2>Aqui va el footer mas adelante</h2>
     </main>
   );
 };
