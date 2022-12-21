@@ -5,6 +5,15 @@ import Main from "./components/Mian/Main";
 import config from "./config.json";
 import { useState, useEffect } from "react";
 import Spinner from "./components/Spinner/Spinner";
+import ApiConsume from "./components/ApiConsume";
+import { BrowserRouter as RutaPrincipal, Routes ,Route, NavLink } from 'react-router-dom'
+import ItemListContainer from "./components/itemListContainer/ItemListContainer";
+import Cart from "./components/Cart/Cart";
+import CheckOut from "./components/CheckOut/CheckOut";
+import FallaCarga from "./components/Falla/FallaCarga";
+import ItemDetailContainer from "./components/ItemDatailContainer/ItemDetailContainer";
+import Navegacion from "./components/Navegacion/Navegacion";
+
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -49,7 +58,21 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundColor: "rgb(249, 141, 0)" }}>
+    
+    <RutaPrincipal>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>} />
+        <Route path="item/detail/:id" element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/checkout' element={<CheckOut/>} />
+        <Route path='/*' element={<FallaCarga/>} />
+      </Routes>
+    </RutaPrincipal>
+    
+    
+    
       <Main>
+      
         {loading && <Spinner />}
         <div className="d-flex">
           {!loading && cards.length > 0 ? cards.map(
@@ -62,6 +85,7 @@ function App() {
                   btnText,
                   btnClassName,
                   precio,
+                  consola,
                 },
                 index
               ) => (
@@ -72,6 +96,7 @@ function App() {
                   genero={genero}
                   img={img}
                   precio={precio}
+                  consola={consola}
                   btnText={btnText}
                   btnClassName={btnClassName}
                 />
@@ -79,6 +104,7 @@ function App() {
             ) : !loading && cards.length < 1 && <h1>Ups fallo la carga</h1>} 
         </div>
       </Main>
+      
     </div>
   );
 }

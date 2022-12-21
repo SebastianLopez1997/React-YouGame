@@ -7,6 +7,7 @@
       "genero": "aventura",
       "img": "https://i.pinimg.com/originals/48/33/a0/4833a01a75f1cb302c12f84c62da0475.png",
       "precio": 6000,
+      "consola": "PC, PS5",
       "btnText": "Comprar"
     },
     {
@@ -16,6 +17,7 @@
       "genero": "terror",
       "img": "https://wallpapercave.com/wp/wp8737802.png",
       "precio": 5000,
+      "consola": "PC, PS5, XBOX",
       "btnText": "Comprar"
     },
     {
@@ -25,6 +27,7 @@
       "genero": "accion",
       "img": "https://images6.alphacoders.com/102/1023546.jpg",
       "precio": 5600,
+      "consola": "PC, XBOX",
       "btnText": "Agotado",
       "btnClassName": "btn btn-danger"
     }

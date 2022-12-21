@@ -1,0 +1,10 @@
+.navlink {
+ text-decoration: none;
+ color:blue;
+}
+
+.navlink-container {
+
+    display: flex;
+    justify-content: space-around;
+}
